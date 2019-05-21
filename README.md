@@ -4,6 +4,19 @@ enLIGHT's online platform.
 
 # Getting Started
 
+## More about the app
+
+### Client-side:
+
+- React 16
+- Redux
+
+### Server-side
+
+- Node with Express
+ 
+
+
 ## Creating Project
 ```bash
 > git clone https://github.com/enlight-canada/enLIGHT-Platform.git
@@ -13,9 +26,16 @@ enLIGHT's online platform.
 ## Running Your App
 Navigate into the `api` folder and run the following command:
 ```bash
-> npm run start
+> npm install
+> npm start
 ```
 Then navigate into the `app` folder and run the following command:
 ```bash
+> npm install
 > npm start
 ```
+
+## Recommended tools as browser extensions
+
+- React Dev Tools
+- Redux Dev Tools
