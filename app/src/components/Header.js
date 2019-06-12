@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Menu, Icon } from 'semantic-ui-react';
 
 export default () => {
   return (
-    <div className="ui secondary pointing menu">
+    <Menu>
       <Link to="/" className="item">
         ENLIGHT
       </Link>
-      <div className="right menu">
+      <Menu.Menu position="right">
         <Link to="/" className="item">
           Home
         </Link>
@@ -17,7 +18,7 @@ export default () => {
         <Link to="/blog" className="item">
           Blog
         </Link>
-      </div>
-    </div>
+      </Menu.Menu>
+    </Menu>
   );
 };
