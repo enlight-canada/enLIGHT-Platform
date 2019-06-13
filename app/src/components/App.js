@@ -1,28 +1,26 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import { Container } from 'semantic-ui-react';
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import BlogPage from './pages/BlogPage';
+import NavBar from './NavBar/NavBar';
 
-import Header from './Header';
 import history from '../history';
 
 const App = () => {
   return (
-    <Container>
+    <div>
       <Router history={history}>
-        <div>
-          <Header />
+        <NavBar>
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/about" exact component={AboutPage} />
             <Route path="/blog" exact component={BlogPage} />
           </Switch>
-        </div>
+        </NavBar>
       </Router>
-    </Container>
+    </div>
   );
 };
 
