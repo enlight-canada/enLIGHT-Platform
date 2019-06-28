@@ -1,9 +1,29 @@
 pipeline {
-    agent { docker { image 'node:6.3' } }
+    agent {
+        docker {
+            image 'node:10'
+            args '-p 3000:3000'
+        }
+    }
+    environment { 
+        CI = 'true'
+    }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'npm --version'
+                sh './jenkins/scripts/build.sh'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './jenkins/scripts/test.sh'
+            }
+        }
+        stage('Deliver') { 
+            steps {
+                sh './jenkins/scripts/deliver.sh' 
+                input message: 'Finished using the web site? (Click "Proceed" to continue)' 
+                sh './jenkins/scripts/kill.sh' 
             }
         }
     }
